@@ -1,0 +1,60 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "meta-dev-agent"
+version = "0.2.0"
+description = "Autonomous Multi-Agent Software Factory with AST-Guarded Local Sandbox, Error-Reflection Self-Healing, and Structured DEV/QA Arbitration."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+    { name = "Johnson Du" },
+]
+keywords = ["multi-agent", "llm", "software-factory", "self-healing", "sandbox", "code-generation"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Code Generators",
+    "Topic :: Software Development :: Quality Assurance",
+]
+dependencies = [
+    "openai>=1.40.0",
+    "python-dotenv>=1.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "ruff>=0.6.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/Johnson-Durui/Meta-Dev-Agent"
+Repository = "https://github.com/Johnson-Durui/Meta-Dev-Agent"
+Issues = "https://github.com/Johnson-Durui/Meta-Dev-Agent/issues"
+
+[project.scripts]
+meta-dev = "meta_dev.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["meta_dev*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 105
+target-version = "py310"
+exclude = ["examples", "workspaces", "runs"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+ignore = ["E501"]

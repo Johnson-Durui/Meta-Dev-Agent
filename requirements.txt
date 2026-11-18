@@ -1,6 +1,3 @@
-faster-whisper
-numpy
-pyserial
-pyttsx3
-sentence-transformers
-sounddevice
+openai>=1.40.0
+python-dotenv>=1.0.0
+pytest>=8.0.0

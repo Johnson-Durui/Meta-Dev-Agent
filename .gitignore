@@ -1,4 +1,26 @@
+# Byte-compiled / cache
 __pycache__/
 *.py[cod]
+*$py.class
+.pytest_cache/
+.ruff_cache/
+
+# OS metadata
 .DS_Store
+Thumbs.db
+
+# Virtual environments & secrets
 .venv/
+venv/
+.env
+.env.local
+
+# Packaging & build artifacts
+build/
+dist/
+*.egg-info/
+
+# Generated workspaces & pipeline runs
+workspaces/
+runs/
+auto_generated.py
